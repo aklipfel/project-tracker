@@ -63,7 +63,7 @@ export default {
     width: 50%;
     height: 100%;
     padding: 20px;
-    background: linear-gradient($darkred, #fe6550);
+    background: linear-gradient($darkred, $lightred);
 
     display: flex;
 	flex-direction: column;
@@ -92,7 +92,7 @@ export default {
     .links {
       padding: 10px;
       a {
-        color: #fe6550;
+        color: $lightred;
       }
     }
     form {

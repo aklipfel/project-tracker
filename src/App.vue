@@ -33,7 +33,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color:$lightgrey;
-  height: inherit;
+  height: 100vh;
   font-family: "Rubik";
 }
 #red-bar {
@@ -52,7 +52,6 @@ body {
   padding:20px;
   padding-bottom:0px;
   margin-left: $nav_width;
-  height:inherit;
 }
 
 h1 {
@@ -65,17 +64,25 @@ h1 {
   margin-top: 5px;
 }
 
-h3 {
+h2 {
   color: $lightgrey;
-  margin: 20px 0px;
+  margin: 50px 0px;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 28px;
   text-align: left;
+}
+
+h3{
+  font-size:26px;
+  font-weight: 400;
+  color:$lightgrey;
+  margin:0;
 }
 
 h4 {
   color: $subtitle;
   text-align: left;
+  font-weight: 400;
   margin: 0px;
   font-size: 20px;
 }
