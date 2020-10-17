@@ -32,7 +32,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color:$lightgrey;
   height: inherit;
   font-family: "Rubik";
 }
@@ -45,11 +45,14 @@ body {
   margin: 0;
   height: 95vh;
   background-color: $dark;
+  overflow:hidden;
 }
 
 .view{
   padding:20px;
+  padding-bottom:0px;
   margin-left: $nav_width;
+  height:inherit;
 }
 
 h1 {
@@ -75,5 +78,13 @@ h4 {
   text-align: left;
   margin: 0px;
   font-size: 20px;
+}
+
+.grey-container{
+  background-color:$darkgrey;
+  border-radius:5px;
+  min-height:50px;
+  padding:10px;
+  overflow: hidden;
 }
 </style>
