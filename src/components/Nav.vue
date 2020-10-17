@@ -1,12 +1,45 @@
 <template>
   <div id="nav">
-    <router-link to="/"><i class="fas fa-home fa-2x active"></i></router-link>
-    <router-link to="/about"><i class="fas fa-bell fa-2x"></i></router-link>
-    <router-link to="/about"
-      ><i class="fas fa-check-double fa-2x"></i
+    <router-link to="/">
+      <i
+        @click="setActive(1)"
+        v-bind:class="{ active: active == 1 }"
+        class="fas fa-home fa-2x"
+      ></i
+    ></router-link>
+    <router-link to="/updates">
+      <i
+        @click="setActive(2)"
+        v-bind:class="{ active: active == 2 }"
+        class="fas fa-bell fa-2x"
+      >
+      </i
+    ></router-link>
+    <router-link to="/tasks"
+      ><i
+        @click="setActive(3)"
+        v-bind:class="{ active: active == 3 }"
+        class="fas fa-check-double fa-2x"
+      ></i
     ></router-link>
   </div>
 </template>
+
+<script>
+export default {
+  name: "Nav",
+  data() {
+    return {
+      active: 1,
+    };
+  },
+  methods: {
+    setActive(val) {
+      this.active = val;
+    },
+  },
+};
+</script>
 
 <style lang="scss">
 @import "@/assets/scss/_variables.scss";
@@ -15,7 +48,7 @@
   display: flex;
   flex-direction: column;
   background-color: $darkgrey;
-  width: 7%;
+  width: $nav_width;
   height: 100%;
 
   a {
