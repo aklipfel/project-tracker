@@ -49,9 +49,9 @@ body {
 }
 
 .view{
-  padding:20px;
   padding-bottom:0px;
   margin-left: $nav_width;
+  height:100%;
 }
 
 h1 {

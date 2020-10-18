@@ -49,6 +49,10 @@ export default {
 <style lang="scss">
 @import "@/assets/scss/_variables.scss";
 
+
+#home{
+  padding:20px;
+}
 .content {
   display: flex;
   height: 80vh;
