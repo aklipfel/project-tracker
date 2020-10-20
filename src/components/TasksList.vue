@@ -3,23 +3,23 @@
     <div class="doings">
       <h2>Tâches en cours</h2>
 
-      <Tile v-for="index in tasks.doing.length" :key="index + 10">
+      <Tile v-for="task in tasks.doing" :key="task.id + 10" :task="task">
         <div class="state">DOING</div></Tile
       >
     </div>
 
     <div class="todos">
       <h2>Tâches à venir</h2>
-      <Tile v-for="index in tasks.todo.length" :key="index + 20">
-        <div class="state todo">DOING</div></Tile
+      <Tile v-for="task in tasks.todo" :key="task.id + 20" :task="task">
+        <div class="state todo">TODO</div></Tile
       >
     </div>
 
     <div class="dones">
       <h2>Tâches terminées</h2>
 
-      <Tile v-for="index in tasks.done.length" :key="index + 30">
-        <div class="state done">DOING</div></Tile
+      <Tile v-for="task in tasks.done" :key="task.id + 30" :task="task">
+        <div class="state done">DONE</div></Tile
       >
     </div>
   </div>
@@ -39,19 +39,19 @@ export default {
 <style lang="scss" scoped>
 .lists {
   height: 100vh;
-  width:75%;
+  width: 75%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
-  .todos, .doings, .dones{ 
-    width:90%;
+  .todos,
+  .doings,
+  .dones {
+    width: 90%;
 
-    .tile{
-      width:100%;
+    .tile {
+      width: 100%;
     }
   }
 }
-
-
 </style>

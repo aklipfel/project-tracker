@@ -13,8 +13,7 @@
         <h2>Module(s) en cours de dévelopement</h2>
 
         <div id="tileslist">
-          <Tile> <div class="state">DOING</div></Tile>
-          <Tile> <div class="state">DOING</div></Tile>
+          <Tile :task="mockTask"> <div class="state">DOING</div></Tile>
         </div>
 
         <h2>Diagramme de GANTT</h2>
@@ -24,7 +23,7 @@
       <div class="right">
         <h2>Dernières mises à jour</h2>
 
-        <Tile>
+        <Tile :task="mockUpdate">
           <div class="state checked"><i class="fas fa-check"></i></div
         ></Tile>
       </div>
@@ -43,15 +42,20 @@ export default {
     Gantt,
     Tile,
   },
+  data() {
+    return {
+      mockTask: { id: 1, name: "Auth" },
+      mockUpdate: { id: 2, name: "Intégration du design v0.1" },
+    };
+  },
 };
 </script>
 
 <style lang="scss">
 @import "@/assets/scss/_variables.scss";
 
-
-#home{
-  padding:20px;
+#home {
+  padding: 20px;
 }
 .content {
   display: flex;
