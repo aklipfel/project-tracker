@@ -1,6 +1,6 @@
 <template>
   <div id="tasks">
-    <Hierarchy :sendSelected="setSelected" :selected="selected"/>
+    <Hierarchy :sendSelected="setSelected" :selected="selected" />
 
     <div class="module">
       <div v-if="selected.id == project.id" class="infos">
@@ -31,12 +31,119 @@ export default {
   data() {
     return {
       toggleProject: true,
-      project: {id : 0, name:"Mon Projet", tasks:[]},
-      selected: {id : 0, name:"Mon Projet",tasks:[]},
+      project: { id: 0, name: "Mon Projet", tasks: [] },
+      selected: { id: 0, name: "Mon Projet", tasks: [] },
       //To State
       modules: [
-        { id: 1, name: "Auth", tasks: {doing: ["",""], todo: [""], done: ["","","",""]} },
-        { id: 2, name: "Daemon", tasks: {doing: ["","",""], todo: ["","","",""], done: [""]}},
+        {
+          id: 1,
+          name: "Auth",
+          tasks: {
+            doing: [
+              {
+                id: 1,
+
+                name: "Mise à jour de la base de données",
+                descr:
+                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
+              },
+              {
+                id: 2,
+                name: "Doing 2",
+                descr:
+                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
+              },
+            ],
+            todo: [
+              {
+                id: 3,
+                name: "Todo 1",
+                descr:
+                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
+              },
+              {
+                id: 4,
+                name: "Todo 2",
+                descr:
+                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
+              },
+              {
+                id: 5,
+                name: "Todo 3",
+                descr:
+                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
+              },
+              {
+                id: 6,
+                name: "Todo 4",
+                descr:
+                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
+              },
+            ],
+            done: [
+              {
+                id: 7,
+                name: "Done 1",
+                descr:
+                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
+              },
+            ],
+          },
+        },
+        {
+          id: 2,
+          name: "Daemon",
+          tasks: {
+            doing: [
+              {
+                id: 1,
+                name: "Doing 1",
+                descr:
+                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
+              },
+              {
+                id: 2,
+                name: "Doing 2",
+                descr:
+                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
+              },
+            ],
+            todo: [
+              {
+                id: 3,
+                name: "Todo 1",
+                descr:
+                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
+              },
+              {
+                id: 4,
+                name: "Todo 2",
+                descr:
+                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
+              },
+              {
+                id: 5,
+                name: "Todo 3",
+                descr:
+                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
+              },
+              {
+                id: 6,
+                name: "Todo 4",
+                descr:
+                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
+              },
+            ],
+            done: [
+              {
+                id: 7,
+                name: "Done 1",
+                descr:
+                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
+              },
+            ],
+          },
+        },
       ],
     };
   },
