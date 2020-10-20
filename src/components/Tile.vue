@@ -2,17 +2,19 @@
   <div class="grey-container tile">
     <slot></slot>
     <div class="infos">
-      <h3>Inscription</h3>
-      <p class="descr">Il s'agit de la description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle</p>
-      <p>Livraison prévue demain</p>
+      <h3 :class="{ nameonly: !task.descr }">{{ task.name }}</h3>
+      <p v-if="task.descr" class="descr">{{ task.descr }}</p>
     </div>
-    <p>></p>
+    <p class="livraison">Livraison prévue<br />Demain</p>
   </div>
 </template>
 
 <script>
 export default {
   name: "Tile",
+  props: {
+    task: { types: Object },
+  },
 };
 </script>
 
@@ -22,7 +24,7 @@ export default {
 .tile {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 90%;
   padding: 10px;
   margin: 10px 0;
@@ -37,12 +39,12 @@ export default {
     padding: 5px;
   }
 
-  .done{
-	  background-color: $green;
+  .done {
+    background-color: $green;
   }
 
-  .toddo{
-	  background-color: $darkred;
+  .toddo {
+    background-color: $darkred;
   }
 
   .checked {
@@ -50,29 +52,32 @@ export default {
   }
 
   .infos {
-	  display:flex;
-	  flex-grow: 1;
-	  padding: 5px 40px;
-	  justify-content: space-between;
-	  align-items: center;
-    p {
-      margin: 0;
+    max-width: 35vw;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+
+    .nameonly {
+      text-align: center;
     }
-    .descr{
-      padding:5px;
-      font-size:14px;
-      margin:0px 20px;
-      max-width:400px;
-      max-height:40px;
-      text-align:left;
+    
+    .descr {
+      margin: 0;
+      font-size: 14px;
+      max-height: 80px;
       word-wrap: none;
-      overflow:hidden;
+      overflow: hidden;
       white-space: nowrap;
-      text-overflow : ellipsis;
+      text-overflow: ellipsis;
     }
     h3 {
       margin-bottom: 2px;
+      min-width: 150px;
     }
+  }
+
+  .livraison {
+    text-align: right;
   }
 }
 </style>
