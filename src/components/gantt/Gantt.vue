@@ -24,7 +24,7 @@
 
 
 <script>
-import GanttTask from "@/components/GanttTask";
+import GanttTask from "@/components/gantt/GanttTask";
 
 export default {
   name: "Gantt",

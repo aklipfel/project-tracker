@@ -22,7 +22,7 @@
 
 <script>
 import TasksList from "@/components/TasksList";
-import ScrumTable from "@/components/ScrumTable";
+import ScrumTable from "@/components/scrum/ScrumTable";
 import Versioning from "@/components/Versioning";
 import Hierarchy from "@/components/Hierarchy";
 export default {

@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import ScrumTableTile from "@/components/ScrumTableTile";
+import ScrumTableTile from "@/components/scrum/ScrumTableTile";
 export default {
   name: "ScrumTable",
   components: {
@@ -37,7 +37,7 @@ export default {
 @import "@/assets/scss/_variables.scss";
 
 #scrum-table {
-  width:75%;
+  width: 75%;
 
   .table {
     display: flex;
@@ -47,7 +47,7 @@ export default {
     width: 90%;
 
     .grey-container {
-	  width:29%;
+      width: 29%;
       min-height: 60vh;
     }
   }

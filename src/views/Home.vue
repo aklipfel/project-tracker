@@ -34,7 +34,7 @@
 
 <script>
 import TopBar from "@/components/TopBar";
-import Gantt from "@/components/Gantt";
+import Gantt from "@/components/gantt/Gantt";
 import Tile from "@/components/Tile";
 export default {
   name: "Home",
