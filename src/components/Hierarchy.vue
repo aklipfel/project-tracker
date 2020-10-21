@@ -196,7 +196,7 @@ export default {
 .opened {
   background-color: $lightgrey;
   position: absolute;
-  left: 265px;
+  left: 21vw;
   i {
     color: $dark;
   }
@@ -206,7 +206,7 @@ export default {
   margin-left: 1px;
   padding: 10px;
   height: 100vh;
-  width: 200px;
+  width: 15vw;
   background-color: $darkgrey;
 
   .active {
@@ -214,12 +214,12 @@ export default {
   }
 
   h1 {
-    font-size: 28px;
+    font-size: 1.7vw;
     padding: 15px;
     color: white;
   }
   h2 {
-    font-size: 24px;
+    font-size: 1.5vw;
 
     margin: 0px;
     padding: 15px;
@@ -233,6 +233,7 @@ export default {
       margin-left: 10px;
       color: white;
       margin-top: 15px;
+      font-size:1.3vw;
     }
   }
 }

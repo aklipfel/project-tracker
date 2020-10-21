@@ -26,12 +26,12 @@ export default {
   
 }
 .module-name {
-    font-size: 22px;
+    font-size: 1.4vw;
     margin: 5px 0;
   }
 
   .module-descr {
-    font-size: 14px;
+    font-size: 1vw;
     color: #fff;
     font-weight: 400;
     margin: 10px 0;

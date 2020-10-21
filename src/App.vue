@@ -57,7 +57,7 @@ body {
 h1 {
   color: $lightgrey;
 
-  font-size: 38px;
+  font-size: 3vw;
   font-weight: 500;
   text-align: left;
   margin-bottom: 5px;
@@ -66,14 +66,14 @@ h1 {
 
 h2 {
   color: $lightgrey;
-  margin: 50px 0px;
+  margin: 30px 0px;
   font-weight: 400;
-  font-size: 28px;
+  font-size: 1.6vw;
   text-align: left;
 }
 
 h3{
-  font-size:26px;
+  font-size:1.4vw;
   font-weight: 400;
   color:$lightgrey;
   margin:0;
@@ -84,13 +84,12 @@ h4 {
   text-align: left;
   font-weight: 400;
   margin: 0px;
-  font-size: 20px;
+  font-size: 1.3vw;
 }
 
 .grey-container{
   background-color:$darkgrey;
   border-radius:5px;
-  min-height:50px;
   padding:10px;
   overflow: hidden;
 }

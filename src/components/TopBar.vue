@@ -30,14 +30,14 @@ export default {
 
 .buttons {
   button {
-    height: 40px;
+    height: 3vw;
     margin: 0px 10px;
     min-width: 100px;
     padding: 5px;
     border: none;
     border-radius: 5px;
     color: $lightgrey;
-    font-size: 18px;
+    font-size: 1.3vw;
     i {
       margin-right: 10px;
     }

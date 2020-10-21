@@ -49,14 +49,14 @@ export default {
       text-align: left;
 
       h3 {
-        font-size: 20px;
+        font-size: 1vw;
         text-align: left;
         margin: 0;
       }
 
       span {
         color: $lightgrey;
-        font-size: 10px;
+        font-size: 0.6vw;
       }
     }
   }

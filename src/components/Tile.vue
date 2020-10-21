@@ -24,15 +24,14 @@ export default {
 .tile {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 90%;
   padding: 10px;
   margin: 10px 0;
   border-radius: 10px;
-  height: 60px;
 
   .state {
-    font-size: 24px;
+    font-size: 1.4vw;
     font-weight: 100;
     border-radius: 10px;
     background-color: $lightred;
@@ -56,14 +55,15 @@ export default {
     justify-content: space-between;
     align-items: flex-start;
     text-align: left;
+    margin: 0px 10px;
 
     .nameonly {
       text-align: center;
     }
-    
+
     .descr {
       margin: 0;
-      font-size: 14px;
+      font-size: 1vw;
       max-height: 80px;
       word-wrap: none;
       overflow: hidden;
@@ -78,6 +78,8 @@ export default {
 
   .livraison {
     text-align: right;
+    margin: 0;
+    font-size: 1vw;
   }
 }
 </style>

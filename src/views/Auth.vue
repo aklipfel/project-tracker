@@ -54,7 +54,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 50%;
     padding: 0;
     height: 50%;
   }
@@ -76,7 +76,7 @@ export default {
 	  height: 70%;
       h1 {
         text-align: center;
-        font-size: 30px;
+        font-size: 2.8vw;
       }
     }
   }
@@ -110,7 +110,7 @@ export default {
           margin: 10px 0;
           width: 90%;
           background-color: $lightgrey;
-          font-size: 22px;
+          font-size: 1.5vw;
         }
 
         button {
@@ -121,7 +121,7 @@ export default {
           border: none;
           border-radius: 5px;
           color: $lightgrey;
-          font-size: 18px;
+          font-size: 1.4vw;
           margin-top: 20px;
           background-color: $darkred;
         }
