@@ -1,6 +1,6 @@
 <template>
   <div id="topbar">
-    <div class="title">
+    <div>
       <h1>{{ title }}</h1>
       <h4 v-if="delivery">Date de livraison prévue : {{ delivery.format('D/MM/YYYY')}}</h4>
     </div>
@@ -26,6 +26,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin-bottom:10px;
+  padding-bottom: 20px;
 }
 
 .buttons {

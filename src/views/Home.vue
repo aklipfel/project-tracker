@@ -10,18 +10,18 @@
     </TopBar>
     <div class="content">
       <div class="left">
-        <h2>Module(s) en cours de dévelopement</h2>
+        <h2 class="title">Module(s) en cours de dévelopement</h2>
 
         <div id="tileslist">
           <TaskTile v-for="module in doingModules" :key="module.id" :task="module"> <div class="state">DOING</div></TaskTile>
         </div>
 
-        <h2>Diagramme de GANTT</h2>
+        <h2 class="title">Diagramme de GANTT</h2>
         <Gantt />
       </div>
 
       <div class="right">
-        <h2>Dernières mises à jour</h2>
+        <h2 class="title">Dernières mises à jour</h2>
 
         <TaskTile v-for="update in updates" :key="update.id" :task="update">
           <div class="state checked"><i class="fas fa-check"></i></div

@@ -73,7 +73,7 @@ export default {
     margin-bottom: 2vh;
 
     p {
-      margin: 0;
+      margin: 10px 0px;
       max-width: 50%;
       padding: 5px;
     }
@@ -82,7 +82,7 @@ export default {
       font-size: 1vw;
       position: absolute;
       width: 3.9vw;
-      bottom: -15px;
+      bottom: -1.2vw;
     }
 
     .messagereceived {
@@ -90,6 +90,7 @@ export default {
       .message-text {
         position: relative;
         float: left;
+        font-size:1.4vw;
         background-color: $darkred;
         border-radius: 10px 10px 10px 0px;
         span {
@@ -105,6 +106,8 @@ export default {
         float: right;
         background-color: $darkgrey;
         border-radius: 10px 10px 0px 10px;
+        font-size:1.4vw;
+        font-weight:400;
 
         span {
           right: 0;
@@ -117,6 +120,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size:16px;
 
     input {
       width: 90%;
@@ -128,8 +132,11 @@ export default {
     }
 
     .fa-arrow-right {
-      margin-right: 10px;
-      color: $lightred;
+      margin:  0 10px;
+      padding:2px;
+      color: $darkred;
+      background-color:$lightgrey;
+      border-radius:50px;
     }
   }
 }

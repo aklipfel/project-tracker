@@ -62,7 +62,9 @@ export default {
 
 #gantt {
   width: 90%;
-  height: 30%;
+  height: 30vh;
+
+  font-size:1rem;
 
   .repere::-webkit-scrollbar {
     display: none;

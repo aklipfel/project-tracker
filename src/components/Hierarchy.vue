@@ -24,7 +24,7 @@
       >
         {{ project.name }}
       </h1>
-      <h2>Modules</h2>
+      <h2 class="title">Modules</h2>
       <div class="modules">
         <h3
           v-for="mod in mods"

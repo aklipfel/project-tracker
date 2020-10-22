@@ -3,7 +3,7 @@
     <TopBar title="Communications" />
     <div class="content">
       <div class="tasks">
-        <h2>Dernières avancées</h2>
+        <h2 class="title">Dernières avancées</h2>
         <NotificationTile
           v-for="notif in notifications"
           :key="notif.id"

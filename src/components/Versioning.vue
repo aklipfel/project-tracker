@@ -1,6 +1,6 @@
 <template>
   <div class="versioning">
-    <h2>Versioning</h2>
+    <h2 class="title">Versioning</h2>
     <div class="grey-container">
       <h3>@{{ branch }}</h3>
 

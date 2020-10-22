@@ -92,12 +92,14 @@ export default {
       border-radius: 10px;
       div {
         flex: 1 1 2;
+        font-size:1.6vw;
         padding: 5px;
         min-width: 100px;
         margin: 5px;
         color: white;
         background-color: $dark;
         border-radius: 5px;
+        cursor: pointer;
       }
       .active {
         background-color: $darkred;

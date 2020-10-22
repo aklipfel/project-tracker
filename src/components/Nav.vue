@@ -50,6 +50,7 @@ export default {
   background-color: $darkgrey;
   width: $nav_width;
   height: 100%;
+  font-size: 1vw;
 
   a {
     color: $lightgrey;

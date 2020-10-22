@@ -1,6 +1,6 @@
 <template>
   <div class="notif-tile grey-container">
-    <p>{{ text }}</p>
+    <h3>{{ text }}</h3>
   </div>
 </template>
 
@@ -15,10 +15,11 @@ export default {
 .notif-tile {
   text-align: left;
   width: 90%;
-  margin: 10px;
+  margin: 10px 0;
 
   p {
     margin: 5px;
+    font-size:1.7vw;
   }
 }
 </style>

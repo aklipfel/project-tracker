@@ -29,6 +29,8 @@ export default {
   position: relative;
   height: 40px;
   margin-top: 1px;
+  font-size:1rem;
+  border-radius: 10px;
   background-color: $darkred;
   display: flex;
   justify-content: center;

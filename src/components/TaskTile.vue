@@ -1,5 +1,5 @@
 <template>
-  <div class="grey-container tile">
+  <div class="grey-container tile" :class="{ done: done }">
     <div class="left">
       <slot></slot>
 
@@ -9,7 +9,9 @@
       </div>
     </div>
 
-    <p class="livraison">Livraison prévue le<br />{{ task.delivery.format("DD/MM/YYYY")}}</p>
+    <p class="livraison">
+      Livraison prévue le<br />{{ task.delivery.format("DD/MM/YYYY") }}
+    </p>
   </div>
 </template>
 
@@ -18,13 +20,16 @@ export default {
   name: "TaskTile",
   props: {
     task: { types: Object },
+    done: { types: Boolean },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/scss/_variables.scss";
-
+.done {
+  background-color: $darkred;
+}
 .tile {
   display: flex;
   align-items: center;
@@ -36,24 +41,28 @@ export default {
 
   .left {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     .state {
       font-size: 1.4vw;
       font-weight: 100;
-      border-radius: 10px;
+      border-radius: 50px;
       background-color: $lightred;
       padding: 5px;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding:10px;
     }
 
     .done {
       background-color: $green;
     }
 
-    .toddo {
+    .todo {
       background-color: $darkred;
+      
     }
 
     .checked {
@@ -61,7 +70,7 @@ export default {
     }
 
     .infos {
-      max-width: 35vw;
+      max-width: 32vw;
       justify-content: space-between;
       align-items: flex-start;
       text-align: left;

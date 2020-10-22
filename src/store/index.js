@@ -31,12 +31,16 @@ export default new Vuex.Store({
               id: 1,
 
               name: "Mise à jour de la base de données",
+              start: moment("2020-10-25"),
+              delivery: moment("2020-10-26"),
               descr:
                 "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
             },
             {
               id: 2,
               name: "Doing 2",
+              start: moment("2020-10-25"),
+              delivery: moment("2020-10-26"),
               descr:
                 "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
             },
@@ -45,24 +49,32 @@ export default new Vuex.Store({
             {
               id: 3,
               name: "Todo 1",
+              start: moment("2020-10-25"),
+              delivery: moment("2020-10-26"),
               descr:
                 "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
             },
             {
               id: 4,
               name: "Todo 2",
+              start: moment("2020-10-25"),
+              delivery: moment("2020-10-26"),
               descr:
                 "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
             },
             {
               id: 5,
               name: "Todo 3",
+              start: moment("2020-10-25"),
+              delivery: moment("2020-10-26"),
               descr:
                 "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
             },
             {
               id: 6,
               name: "Todo 4",
+              start: moment("2020-10-25"),
+              delivery: moment("2020-10-26"),
               descr:
                 "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
             },
@@ -71,6 +83,8 @@ export default new Vuex.Store({
             {
               id: 7,
               name: "Done 1",
+              start: moment("2020-10-25"),
+              delivery: moment("2020-10-26"),
               descr:
                 "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
             },
@@ -90,12 +104,16 @@ export default new Vuex.Store({
             {
               id: 1,
               name: "Doing 1",
+              start: moment("2020-10-25"),
+              delivery: moment("2020-10-26"),
               descr:
                 "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
             },
             {
               id: 2,
               name: "Doing 2",
+              start: moment("2020-10-25"),
+              delivery: moment("2020-10-26"),
               descr:
                 "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
             },
@@ -104,24 +122,32 @@ export default new Vuex.Store({
             {
               id: 3,
               name: "Todo 1",
+              start: moment("2020-10-25"),
+              delivery: moment("2020-10-26"),
               descr:
                 "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
             },
             {
               id: 4,
               name: "Todo 2",
+              start: moment("2020-10-25"),
+              delivery: moment("2020-10-26"),
               descr:
                 "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
             },
             {
               id: 5,
               name: "Todo 3",
+              start: moment("2020-10-25"),
+              delivery: moment("2020-10-26"),
               descr:
                 "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
             },
             {
               id: 6,
               name: "Todo 4",
+              start: moment("2020-10-25"),
+              delivery: moment("2020-10-26"),
               descr:
                 "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
             },
@@ -130,6 +156,8 @@ export default new Vuex.Store({
             {
               id: 7,
               name: "Done 1",
+              start: moment("2020-10-25"),
+              delivery: moment("2020-10-26"),
               descr:
                 "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
             },

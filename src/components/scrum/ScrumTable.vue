@@ -1,18 +1,18 @@
 <template>
   <div id="scrum-table">
-    <h2>Avancée des modules</h2>
+    <h2 class="title">Avancée des modules</h2>
     <div class="table">
       <div class="grey-container">
-        <h3>TO DO</h3>
+        <h2>TO DO</h2>
         <ScrumTableTile v-for="task in tasks.todo" :key="task.id" :task="task"/>
       </div>
       <div class="grey-container">
-        <h3>DOING</h3>
+        <h2>DOING</h2>
         <ScrumTableTile v-for="task in tasks.doing" :key="task.id" :task="task"/>
       </div>
       <div class="grey-container">
-        <h3>DONE</h3>
-        <ScrumTableTile v-for="task in tasks.done" :key="task.id" :task="task"/>
+        <h2>DONE</h2>
+        <ScrumTableTile v-for="task in tasks.done" :key="task.id" :task="task" :done="true"/>
       </div>
     </div>
   </div>
@@ -39,15 +39,20 @@ export default {
 #scrum-table {
   width: 75%;
 
+  h3{
+    font-size:2vw;
+  }
+
   .table {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 
-    width: 90%;
+    width: 95%;
 
     .grey-container {
-      width: 29%;
+      width: 15vw;
+      margin: 0 1vw;
       min-height: 60vh;
     }
   }
