@@ -7,11 +7,11 @@
         class="fas fa-home fa-2x"
       ></i
     ></router-link>
-    <router-link to="/updates">
+    <router-link to="/communications">
       <i
         @click="setActive(2)"
         v-bind:class="{ active: active == 2 }"
-        class="fas fa-bell fa-2x"
+        class="fas fa-comments fa-2x"
       >
       </i
     ></router-link>
