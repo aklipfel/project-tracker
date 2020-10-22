@@ -29,22 +29,26 @@ export default {
   },
   data() {
     return {
-      notifications: [
-        {
-          id: 1,
-          text: "Début de développement du module Auth",
-        },
-        {
-          id: 2,
-          text: "Développement de la page de login pour le module Auth",
-        },
-        {
-          id: 3,
-          text:
-            "Fin du développement de la page de login pour le module Auth, passage en test",
-        },
-      ],
+      notifications: [],
     };
+  },
+  mounted() {
+    //will be a firestore call to the comments collection
+    this.notifications = [
+      {
+        id: 1,
+        text: "Début de développement du module Auth",
+      },
+      {
+        id: 2,
+        text: "Développement de la page de login pour le module Auth",
+      },
+      {
+        id: 3,
+        text:
+          "Fin du développement de la page de login pour le module Auth, passage en test",
+      },
+    ];
   },
 };
 </script>
