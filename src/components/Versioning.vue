@@ -2,7 +2,7 @@
   <div class="versioning">
     <h2>Versioning</h2>
     <div class="grey-container">
-      <h3>@dev-auth</h3>
+      <h3>@{{ branch }}</h3>
 
       <div class="commits">
         <div v-for="index in 2" :key="index" class="commit">
@@ -15,8 +15,12 @@
 </template>
 
 <script>
+//To retrieve commits, computed method to fetch commits on GitHub API
 export default {
   name: "Versioning",
+  props: {
+    branch: { types: String },
+  },
 };
 </script>
 
@@ -33,13 +37,13 @@ export default {
   .grey-container {
     background-color: $darkgrey;
     margin: 0px;
-    padding: 10px;
+    padding: px;
     min-height: 60vh;
   }
 
   .commits {
     margin-top: 10px;
-    padding: 10px;
+    padding: 0 10px;
     border-left: 1px solid $lightgrey;
 
     .commit {
