@@ -2,7 +2,7 @@
   <div id="topbar">
     <div class="title">
       <h1>{{ title }}</h1>
-      <h4>Date de livraison prévue : 28/10/2020</h4>
+      <h4 v-if="delivery">Date de livraison prévue : {{ delivery.format('D/MM/YYYY')}}</h4>
     </div>
 
     <div class="buttons">
@@ -14,7 +14,7 @@
 <script>
 export default {
   name: "TopBar",
-  props: ["title"],
+  props: ["title", "delivery"],
 };
 </script>
 
