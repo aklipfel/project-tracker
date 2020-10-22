@@ -25,22 +25,35 @@
 
 <script>
 import GanttTask from "@/components/gantt/GanttTask";
+import {mapState} from 'vuex'
 
 export default {
   name: "Gantt",
   data() {
     return {
       today: 13,
-      tasks: [
-        { name: "Test", days: 5, daysBefore: 0, done: true },
-        { name: "Test", days: 2, daysBefore: 5 },
-        { name: "Test", days: 3, daysBefore: 7 },
-        { name: "Test", days: 6, daysBefore: 10 },
-      ],
+      tasks: [],
     };
   },
+  created() {
+    
+    this.tasks = this.createGanttTasks();
+  },
   components: { GanttTask },
-  methods: {},
+  computed: { ...mapState(["mods"]) },
+  methods: {
+    createGanttTasks(){
+      let day_count = 0;
+      let tasks = []
+      this.mods.forEach((mod) => {
+        let diff = mod.delivery.diff(mod.start,'days')
+        tasks.push({name:mod.name, days:diff, daysBefore:day_count, done: (mod.state == "done")});
+        day_count += diff
+      })
+
+      return tasks;
+    }
+  },
 };
 </script>
 

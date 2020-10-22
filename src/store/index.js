@@ -22,7 +22,8 @@ export default new Vuex.Store({
         name: "Auth",
         descr: "Okokok c'est un module tout va bien",
         branch: "dev-auth",
-        state:'doing',
+        state: 'doing',
+        start: moment("2020-10-25"),
         delivery: moment("2020-10-26"),
         tasks: {
           doing: [
@@ -81,8 +82,9 @@ export default new Vuex.Store({
         name: "Daemon",
         descr: "Okokok c'est un module aussi tout va bien",
         branch: "dev-daemon",
-        state:'done',
-        delivery: moment("2020-10-27"),
+        state: 'done',
+        start: moment("2020-10-26"),
+        delivery: moment("2020-10-28"),
         tasks: {
           doing: [
             {
