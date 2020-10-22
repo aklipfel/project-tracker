@@ -13,7 +13,7 @@
         <h2>Module(s) en cours de dévelopement</h2>
 
         <div id="tileslist">
-          <Tile :task="mockTask"> <div class="state">DOING</div></Tile>
+          <TaskTile :task="mockTask"> <div class="state">DOING</div></TaskTile>
         </div>
 
         <h2>Diagramme de GANTT</h2>
@@ -23,9 +23,9 @@
       <div class="right">
         <h2>Dernières mises à jour</h2>
 
-        <Tile :task="mockUpdate">
+        <TaskTile :task="mockUpdate">
           <div class="state checked"><i class="fas fa-check"></i></div
-        ></Tile>
+        ></TaskTile>
       </div>
     </div>
   </div>
@@ -34,13 +34,13 @@
 <script>
 import TopBar from "@/components/TopBar";
 import Gantt from "@/components/gantt/Gantt";
-import Tile from "@/components/Tile";
+import TaskTile from "@/components/TaskTile";
 export default {
   name: "Home",
   components: {
     TopBar,
     Gantt,
-    Tile,
+    TaskTile,
   },
   data() {
     return {

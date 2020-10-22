@@ -180,6 +180,8 @@ export default {
   }
 
   .switch-container {
+    width: 75%;
+
     .switch {
       display: inline-flex;
       justify-content: center;

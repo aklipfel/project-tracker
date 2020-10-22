@@ -3,33 +3,33 @@
     <div class="doings">
       <h2>Tâches en cours</h2>
 
-      <Tile v-for="task in tasks.doing" :key="task.id + 10" :task="task">
-        <div class="state">DOING</div></Tile
+      <TaskTile v-for="task in tasks.doing" :key="task.id + 10" :task="task">
+        <div class="state">DOING</div></TaskTile
       >
     </div>
 
     <div class="todos">
       <h2>Tâches à venir</h2>
-      <Tile v-for="task in tasks.todo" :key="task.id + 20" :task="task">
-        <div class="state todo">TODO</div></Tile
+      <TaskTile v-for="task in tasks.todo" :key="task.id + 20" :task="task">
+        <div class="state todo">TODO</div></TaskTile
       >
     </div>
 
     <div class="dones">
       <h2>Tâches terminées</h2>
 
-      <Tile v-for="task in tasks.done" :key="task.id + 30" :task="task">
-        <div class="state done">DONE</div></Tile
+      <TaskTile v-for="task in tasks.done" :key="task.id + 30" :task="task">
+        <div class="state done">DONE</div></TaskTile
       >
     </div>
   </div>
 </template>
 
 <script>
-import Tile from "@/components/Tile";
+import TaskTile from "@/components/TaskTile";
 export default {
   name: "TasksList",
-  components: { Tile },
+  components: { TaskTile },
   props: {
     tasks: { types: Array },
   },

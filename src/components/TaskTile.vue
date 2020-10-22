@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "Tile",
+  name: "TaskTile",
   props: {
     task: { types: Object },
   },
