@@ -3,14 +3,7 @@
     <Hierarchy :sendSelected="setSelected" :selected="selected" />
 
     <div class="module">
-      <div v-if="selected.id == project.id" class="infos">
-        <h1>{{ project.name }}</h1>
-        <h4>Livraison prévue demain</h4>
-      </div>
-      <div v-else class="infos">
-        <h1>Auth</h1>
-        <h4>Livraison prévue demain</h4>
-      </div>
+      <TopBar :title="selected.name" :delivery="selected.delivery"/>
       <div class="switch-container">
         <div class="switch">
           <div :class="{ active: scrumTable }" @click="switchView">
@@ -33,15 +26,16 @@ import TasksList from "@/components/TasksList";
 import ScrumTable from "@/components/scrum/ScrumTable";
 import Versioning from "@/components/Versioning";
 import Hierarchy from "@/components/Hierarchy";
+import TopBar from "@/components/TopBar";
 export default {
   name: "Tasks",
-  components: { TasksList, Versioning, Hierarchy, ScrumTable },
+  components: { TasksList, Versioning, Hierarchy, ScrumTable,TopBar },
   data() {
     return {
       toggleProject: true,
       scrumTable: true,
       project: { id: 0, name: "Mon Projet", tasks: [] },
-      selected: { id: 0, name: "Mon Projet", tasks: [] },
+      selected: { id: 0, name: "Mon Projet", tasks: [], },
       //To State
       modules: [
         {
