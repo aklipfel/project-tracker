@@ -1,10 +1,30 @@
 <template>
   <div id="login">
     <div class="grey-container">
-      <div class="left">
+      <div v-if="showPassword" class="left">
+        <div class="text">
+          <h1>Reset Password</h1>
+          <h3 style="margin: 20px 0px">
+            Enter your email to receive a link to reset your password
+          </h3>
+        </div>
+        <form @submit.prevent>
+          <div class="inputs">
+            <input type="text" placeholder="Email" v-model.trim="email" />
+            <button @click="login">SEND</button>
+          </div>
+        </form>
+        <div class="links">
+          <a @click="togglePassword">Return to login </a>
+        </div>
+      </div>
+
+      <div v-else class="left">
         <div class="text">
           <h1>Login</h1>
-          <h3 style="margin:20px 0px;">Login to your account to always be in touch with your project</h3>
+          <h3 style="margin: 20px 0px">
+            Login to your account to always be in touch with your project
+          </h3>
         </div>
         <form @submit.prevent>
           <div class="inputs">
@@ -14,7 +34,7 @@
           </div>
         </form>
         <div class="links">
-          <a>Forgot password ? </a>
+          <a @click="togglePassword">Forgot password ? </a>
         </div>
       </div>
 
@@ -42,11 +62,15 @@ export default {
     return {
       email: "",
       password: "",
+      showPassword: false,
     };
   },
   methods: {
     login() {
       this.$store.dispatch("login");
+    },
+    togglePassword() {
+      this.showPassword = !this.showPassword;
     },
   },
 };
