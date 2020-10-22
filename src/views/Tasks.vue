@@ -15,7 +15,7 @@
       <div class="content">
         <ScrumTable v-if="scrumTable" :tasks="selected.tasks" />
         <TasksList v-else :tasks="selected.tasks" />
-        <Versioning />
+        <Versioning :branch="selected.branch"/>
       </div>
     </div>
   </div>
@@ -27,6 +27,8 @@ import ScrumTable from "@/components/scrum/ScrumTable";
 import Versioning from "@/components/Versioning";
 import Hierarchy from "@/components/Hierarchy";
 import TopBar from "@/components/TopBar";
+import { mapState } from "vuex";
+
 export default {
   name: "Tasks",
   components: { TasksList, Versioning, Hierarchy, ScrumTable, TopBar },
@@ -34,237 +36,34 @@ export default {
     return {
       toggleProject: true,
       scrumTable: true,
-      project: {
-        id: 0,
-        name: "Mon Projet",
-        tasks: {
-          doing: [
-            {
-              id: 1,
-
-              name: "Mise à jour de la base de données",
-              descr:
-                "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-            },
-            {
-              id: 2,
-              name: "Doing 2",
-              descr:
-                "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-            },
-          ],
-          todo: [
-            {
-              id: 3,
-              name: "Todo 1",
-              descr:
-                "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-            },
-            {
-              id: 4,
-              name: "Todo 2",
-              descr:
-                "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-            },
-            {
-              id: 5,
-              name: "Todo 3",
-              descr:
-                "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-            },
-            {
-              id: 6,
-              name: "Todo 4",
-              descr:
-                "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-            },
-          ],
-          done: [
-            {
-              id: 7,
-              name: "Done 1",
-              descr:
-                "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-            },
-          ],
-        },
-      },
-      selected: {
-        id: 0,
-        name: "Mon Projet",
-        tasks: {
-          doing: [
-            {
-              id: 1,
-
-              name: "Mise à jour de la base de données",
-              descr:
-                "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-            },
-            {
-              id: 2,
-              name: "Doing 2",
-              descr:
-                "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-            },
-          ],
-          todo: [
-            {
-              id: 3,
-              name: "Todo 1",
-              descr:
-                "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-            },
-            {
-              id: 4,
-              name: "Todo 2",
-              descr:
-                "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-            },
-            {
-              id: 5,
-              name: "Todo 3",
-              descr:
-                "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-            },
-            {
-              id: 6,
-              name: "Todo 4",
-              descr:
-                "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-            },
-          ],
-          done: [
-            {
-              id: 7,
-              name: "Done 1",
-              descr:
-                "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-            },
-          ],
-        },
-      },
-      //To State
-      modules: [
-        {
-          id: 1,
-          name: "Auth",
-          tasks: {
-            doing: [
-              {
-                id: 1,
-
-                name: "Mise à jour de la base de données",
-                descr:
-                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-              },
-              {
-                id: 2,
-                name: "Doing 2",
-                descr:
-                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-              },
-            ],
-            todo: [
-              {
-                id: 3,
-                name: "Todo 1",
-                descr:
-                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-              },
-              {
-                id: 4,
-                name: "Todo 2",
-                descr:
-                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-              },
-              {
-                id: 5,
-                name: "Todo 3",
-                descr:
-                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-              },
-              {
-                id: 6,
-                name: "Todo 4",
-                descr:
-                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-              },
-            ],
-            done: [
-              {
-                id: 7,
-                name: "Done 1",
-                descr:
-                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-              },
-            ],
-          },
-        },
-        {
-          id: 2,
-          name: "Daemon",
-          tasks: {
-            doing: [
-              {
-                id: 1,
-                name: "Doing 1",
-                descr:
-                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-              },
-              {
-                id: 2,
-                name: "Doing 2",
-                descr:
-                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-              },
-            ],
-            todo: [
-              {
-                id: 3,
-                name: "Todo 1",
-                descr:
-                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-              },
-              {
-                id: 4,
-                name: "Todo 2",
-                descr:
-                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-              },
-              {
-                id: 5,
-                name: "Todo 3",
-                descr:
-                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-              },
-              {
-                id: 6,
-                name: "Todo 4",
-                descr:
-                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-              },
-            ],
-            done: [
-              {
-                id: 7,
-                name: "Done 1",
-                descr:
-                  "Description de la tâche actuelle. Normalement cela ne devrait pas dépasser une certaine longueur ou alors je lui coupe alègrement le siffle",
-              },
-            ],
-          },
-        },
-      ],
+      selected: {},
     };
   },
-
+  created() {
+    this.selected = this.project;
+    if (this.selected.id == this.project.id)
+      this.selected.tasks = this.sortModules();
+  },
+  computed: {
+    ...mapState(["project", "mods"]),
+  },
   methods: {
     setSelected(val) {
       this.selected = val;
     },
     switchView() {
       this.scrumTable = !this.scrumTable;
+    },
+    sortModules() {
+      let todo = this.mods.filter((m) => m.state == "todo");
+      let doing = this.mods.filter((m) => m.state == "doing");
+      let done = this.mods.filter((m) => m.state == "done");
+
+      return {
+        todo,
+        doing,
+        done,
+      };
     },
   },
 };
