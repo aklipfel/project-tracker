@@ -4,16 +4,24 @@
 
     <div class="module">
       <div v-if="selected.id == project.id" class="infos">
-        <h1>Mon Projet</h1>
+        <h1>{{ project.name }}</h1>
         <h4>Livraison prévue demain</h4>
       </div>
       <div v-else class="infos">
         <h1>Auth</h1>
         <h4>Livraison prévue demain</h4>
       </div>
+      <div class="switch-container">
+        <div class="switch">
+          <div :class="{ active: scrumTable }" @click="switchView">
+            Scrum Table
+          </div>
+          <div :class="{ active: !scrumTable }" @click="switchView">List</div>
+        </div>
+      </div>
       <div class="content">
-        <ScrumTable v-if="selected.id == project.id" />
-        <TasksList :tasks="selected.tasks" v-else />
+        <ScrumTable v-if="scrumTable" />
+        <TasksList v-else :tasks="selected.tasks" />
         <Versioning />
       </div>
     </div>
@@ -31,6 +39,7 @@ export default {
   data() {
     return {
       toggleProject: true,
+      scrumTable: true,
       project: { id: 0, name: "Mon Projet", tasks: [] },
       selected: { id: 0, name: "Mon Projet", tasks: [] },
       //To State
@@ -152,6 +161,9 @@ export default {
     setSelected(val) {
       this.selected = val;
     },
+    switchView() {
+      this.scrumTable = !this.scrumTable;
+    },
   },
 };
 </script>
@@ -165,6 +177,29 @@ export default {
   .module {
     width: 100%;
     padding: 20px;
+  }
+
+  .switch-container {
+    .switch {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      background-color: $darkgrey;
+      border-radius: 10px;
+      div {
+        flex: 1 1 2;
+        padding: 5px;
+        min-width: 100px;
+        margin: 5px;
+        color: white;
+        background-color: $dark;
+        border-radius: 5px;
+      }
+      .active {
+        background-color: $darkred;
+      }
+    }
   }
 }
 </style>
