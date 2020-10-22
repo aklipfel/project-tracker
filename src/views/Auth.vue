@@ -4,7 +4,7 @@
       <div class="left">
         <div class="text">
           <h1>Login</h1>
-          <p>Login to your account to always be in touch with your project</p>
+          <h3 style="margin:20px 0px;">Login to your account to always be in touch with your project</h3>
         </div>
         <form @submit.prevent>
           <div class="inputs">
@@ -21,14 +21,14 @@
       <div class="overlay">
         <div class="text">
           <h1>Ready to collaborate ?</h1>
-          <p>
+          <h3>
             This awesome tool will help you to be closer to your projects than
             ever.
-          </p>
-          <p>
+          </h3>
+          <h2>
             You'll get a daily feedback of all that's been going in the
             development process
-          </p>
+          </h2>
         </div>
       </div>
     </div>
@@ -38,17 +38,17 @@
 <script>
 export default {
   name: "Auth",
-  data(){
-    return{
-      email:'',
-      password:''
-    }
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
   },
   methods: {
-    login(){
-      this.$store.dispatch('login')
-    }
-  }
+    login() {
+      this.$store.dispatch("login");
+    },
+  },
 };
 </script>
 
@@ -65,9 +65,14 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 80%;
     padding: 0;
     height: 50%;
+  }
+  @media screen and (min-width: 1150px) {
+    .grey-container {
+      width: 50%;
+    }
   }
 
   .overlay {
@@ -77,14 +82,14 @@ export default {
     background: linear-gradient($darkred, $lightred);
 
     display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     .text {
       display: flex;
       flex-direction: column;
-	  justify-content: space-evenly;
-	  height: 70%;
+      justify-content: space-evenly;
+      height: 70%;
       h1 {
         text-align: center;
         font-size: 2.8vw;

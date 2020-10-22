@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import {mapState} from "vuex"
 export default {
   name: "Nav",
   data() {
@@ -33,6 +34,7 @@ export default {
       active: 1,
     };
   },
+  computed : { ...mapState(['user'])},
   methods: {
     setActive(val) {
       this.active = val;
