@@ -13,7 +13,7 @@
         <h2>Module(s) en cours de dévelopement</h2>
 
         <div id="tileslist">
-          <TaskTile :task="mockTask"> <div class="state">DOING</div></TaskTile>
+          <TaskTile v-for="module in doingModules" :key="module.id" :task="module"> <div class="state">DOING</div></TaskTile>
         </div>
 
         <h2>Diagramme de GANTT</h2>
@@ -23,7 +23,7 @@
       <div class="right">
         <h2>Dernières mises à jour</h2>
 
-        <TaskTile :task="mockUpdate">
+        <TaskTile v-for="update in updates" :key="update.id" :task="update">
           <div class="state checked"><i class="fas fa-check"></i></div
         ></TaskTile>
       </div>
@@ -36,6 +36,7 @@ import TopBar from "@/components/TopBar";
 import Gantt from "@/components/gantt/Gantt";
 import TaskTile from "@/components/TaskTile";
 import {mapState} from "vuex"
+import moment from 'moment'
 
 export default {
   name: "Home",
@@ -46,13 +47,19 @@ export default {
   },
   data() {
     return {
-      mockTask: { id: 1, name: "Auth" },
-      mockUpdate: { id: 2, name: "Intégration du design v0.1" },
+      doingModules: [],
+      updates : []
     };
+  },
+  created(){
+    this.doingModules = this.mods.filter((mod) => mod.state == "doing")
+
+    //will be fetched from firestore
+    this.updates = [{id:1, name:"Intégration du design v0.1", delivery: moment()}]
   },
 
   computed:{
-    ...mapState(['project'])
+    ...mapState(['project', 'mods'])
   }
 };
 </script>

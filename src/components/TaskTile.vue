@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <p class="livraison">Livraison prévue<br />Demain</p>
+    <p class="livraison">Livraison prévue le<br />{{ task.delivery.format("DD/MM/YYYY")}}</p>
   </div>
 </template>
 
