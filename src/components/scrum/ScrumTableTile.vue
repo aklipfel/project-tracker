@@ -1,8 +1,8 @@
 <template>
   <div class="table-tile">
-    <div class="module-name">Auth</div>
+    <div class="module-name">{{ task.name}}</div>
     <div class="module-descr">
-      Authentification par email, Facebook, Google et Apple
+      {{ task.descr }}
     </div>
   </div>
 </template>
@@ -10,6 +10,9 @@
 <script>
 export default {
   name: "ScrumTableTile",
+  props : {
+    task : { types: Object}
+  }
 };
 </script>
 

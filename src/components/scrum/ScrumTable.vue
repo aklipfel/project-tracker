@@ -4,20 +4,15 @@
     <div class="table">
       <div class="grey-container">
         <h3>TO DO</h3>
-        <ScrumTableTile />
-        <ScrumTableTile />
+        <ScrumTableTile v-for="task in tasks.todo" :key="task.id" :task="task"/>
       </div>
       <div class="grey-container">
         <h3>DOING</h3>
-        <ScrumTableTile />
-        <ScrumTableTile />
-        <ScrumTableTile />
+        <ScrumTableTile v-for="task in tasks.doing" :key="task.id" :task="task"/>
       </div>
       <div class="grey-container">
         <h3>DONE</h3>
-        <ScrumTableTile />
-        <ScrumTableTile />
-        <ScrumTableTile />
+        <ScrumTableTile v-for="task in tasks.done" :key="task.id" :task="task"/>
       </div>
     </div>
   </div>
@@ -30,6 +25,11 @@ export default {
   components: {
     ScrumTableTile,
   },
+  props : {
+    tasks : {
+      types: Object
+    }
+  }
 };
 </script>
 
