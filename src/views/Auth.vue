@@ -10,7 +10,7 @@
           <div class="inputs">
             <input type="text" placeholder="Email" v-model.trim="email" />
             <input type="text" placeholder="Password" v-model.trim="password" />
-            <button>SIGN IN</button>
+            <button @click="login">SIGN IN</button>
           </div>
         </form>
         <div class="links">
@@ -38,6 +38,17 @@
 <script>
 export default {
   name: "Auth",
+  data(){
+    return{
+      email:'',
+      password:''
+    }
+  },
+  methods: {
+    login(){
+      this.$store.dispatch('login')
+    }
+  }
 };
 </script>
 

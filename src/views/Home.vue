@@ -1,10 +1,10 @@
 <template>
   <div id="home">
-    <TopBar title="Mon Projet">
+    <TopBar :title="project.name" :delivery="project.delivery">
       <!-- <button class="accept">VALIDER</button>
       <button class="red">REFUSER</button> -->
       <button class="red">
-        <i class="fas fa-arrow-down"></i>CAHIER DES CHARGES
+        <i class="fas fa-arrow-up"></i>CAHIER DES CHARGES
       </button>
       <button class="red"><i class="fas fa-arrow-down"></i>DEVIS</button>
     </TopBar>
@@ -35,6 +35,8 @@
 import TopBar from "@/components/TopBar";
 import Gantt from "@/components/gantt/Gantt";
 import TaskTile from "@/components/TaskTile";
+import {mapState} from "vuex"
+
 export default {
   name: "Home",
   components: {
@@ -48,6 +50,10 @@ export default {
       mockUpdate: { id: 2, name: "Intégration du design v0.1" },
     };
   },
+
+  computed:{
+    ...mapState(['project'])
+  }
 };
 </script>
 
